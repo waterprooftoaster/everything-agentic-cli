@@ -1,9 +1,9 @@
 # everything-claude-code
 
-Out of the box, Claude Code is already good. However, a tuned `.claude/` directory, it becomes **incredibly** more competent for your use case. 
+Out of the box, Claude Code is already pretty good. But a tuned `.claude/` directory makes it become **incredibly** more competent for your use case. However, it will become significantly more token-hungry.
 
 
-> Forked from [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code). All credit to the original author for the foundation. The original repo has ballooned into a multi-agent harness, I distilled it back down to be only relevant to my Claude Code use case.
+> Forked from [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code). All credit to the original author for the foundation. The original repo has ballooned into a multi-agent harness; I distilled it back down to be only relevant to my Claude Code use case.
 
 ---
 
@@ -38,7 +38,7 @@ agents/
 
 ### `commands/`
 
-Slash commands that users invoke directly in the Claude Code prompt (e.g. `/tdd`, `/plan`, `/code-review`). Each command is a Markdown file with a `description` frontmatter field. When you type `/tdd`, Claude loads that command's instructions and follows them.
+Slash commands that users invoke directly in the Claude Code prompt (e.g., `/tdd`, `/plan`, `/code-review`). Each command is a Markdown file with a `description` frontmatter field. When you type `/tdd`, Claude loads that command's instructions and follows them.
 
 ```
 commands/
@@ -74,7 +74,7 @@ cp -r rules/typescript ~/.claude/rules/typescript
 
 ### `skills/`
 
-Deep reference material for specific tasks. While rules tell Claude *what* to do, skills tell it *how*. Skills are loaded contextually when relevant — e.g. the `tdd-workflow` skill gets pulled in during TDD sessions, `golang-patterns` during Go work. There are skills for everything from `django-tdd` to `liquid-glass-design` to `investor-outreach`.
+Deep reference material for specific tasks. While rules tell Claude *what* to do, skills tell it *how*. Skills are loaded contextually when relevant — e.g., the `tdd-workflow` skill gets pulled in during TDD sessions, `golang-patterns` during Go work. There are skills for everything from `django-tdd` to `liquid-glass-design` to `investor-outreach`.
 
 ### `scripts/` and hooks
 
@@ -121,7 +121,7 @@ Project-scoped overrides that sit in your project root (not committed to git). U
 
 ## MCPs (Model Context Protocol servers)
 
-MCPs are external servers that extend what Claude can *do*. Think of them as prompt actuated APIs. A GitHub MCP gives Claude real GitHub API access, a Playwright MCP lets Claude control a browser, a Supabase MCP lets Claude query your database directly.
+MCPs are external servers that extend what Claude can *do*. Think of them as prompt-actuated APIs. A GitHub MCP gives Claude real GitHub API access, a Playwright MCP lets Claude control a browser, and a Supabase MCP lets Claude query your database directly.
 
 ### Where to configure them
 
@@ -148,7 +148,7 @@ The original repo recommends putting MCPs in `settings.json`. **I don't do this.
 }
 ```
 
-> **Keep it under 10 MCPs** — each one consumes context window. Realistically you should only need 2 or 3.
+> **Keep it under 10 MCPs** — each one consumes context window. Realistically, you should only need a few.
 
 ---
 
@@ -165,8 +165,7 @@ The original repo recommends putting MCPs in `settings.json`. **I don't do this.
 │   └── lib/         # shared utilities
 ├── hooks/
 │   └── hooks.json   # hook event → script mappings
-├── mcp-configs/
-│   └── mcp-servers.json  # MCP reference configs
+├── .mpc.json  # MCP reference configs
 ├── examples/        # example CLAUDE.md files
 └── CLAUDE.md        # instructions for Claude in this repo
 ```
