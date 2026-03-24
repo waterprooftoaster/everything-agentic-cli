@@ -111,20 +111,5 @@
         "description": "Check for console.log in modified files after each response"
       }
     ]
-  },
-  "mcpServers": {
-    "github": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "YOUR_GITHUB_PAT_HERE"
-      },
-      "description": "GitHub operations - PRs, issues, repos"
-    },
-    "playwright": {
-      "command": "npx",
-      "args": ["-y", "@playwright/mcp", "--browser", "chrome"],
-      "description": "Browser automation and testing via Playwright"
-    }
   }
 }
