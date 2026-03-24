@@ -9,7 +9,7 @@ Out of the box, Claude Code is already pretty good. But a tuned `.claude/` direc
 
 ## Easy Set Up
 
-Just clone one of my branches. It's has a ready-to-use `.claude/` and a  `.mcp.json` tuned for the type of project in the branch's name. Replace `.mcp.json`'s place holders with your real keys.
+Just clone one of my branches. It has a ready-to-use `.claude/` and a  `.mcp.json` tuned to the project type in the branch name. Replace `.mcp.json`'s place holders with your real keys.
 
 ```bash
 git clone -b <branch-name> --single-branch https://github.com/waterprooftoaster/everything-claude-code
@@ -19,13 +19,13 @@ The `main` branch holds the full unfiltered collection to personalize your own. 
 
 ---
 
-## How Claude Code extensions work
+## Setting Up Your Own
 
-Claude Code reads from a `.claude/` directory in your project (or globally from `~/.claude/`). Everything inside shapes how Claude behaves — what it knows, what it does automatically, and how it delegates work. Here's what each piece does:
+If you are already familiar with `/claude`, this section is not for you. If you are not, setting up your own requires some basic understanding of the structure. Claude reads from a `.claude/` directory in your project (or globally from `~/.claude/`). Everything inside shapes how Claude behaves — what it knows, what it does automatically, and how it delegates work. Here's what each piece does:
 
 ### `agents/`
 
-Specialized subagents Claude can spin up and delegate tasks to. Each agent is a Markdown file with a YAML frontmatter block defining its name, description, available tools, and model. Claude routes work to agents when a task matches their specialty — e.g. a `code-reviewer` agent gets called during review workflows, a `tdd-guide` agent guides test-first development.
+Specialized subagents Claude can spin up and delegate tasks to. Each agent is a Markdown file with a YAML frontmatter block defining its name, description, available tools, and model. Claude routes work to agents when a task matches their specialty — e.g., a `code-reviewer` agent gets called during review workflows, a `tdd-guide` agent guides test-first development.
 
 ```
 agents/
@@ -50,7 +50,7 @@ commands/
 
 ### `rules/`
 
-Always-on guidelines Claude follows in every conversation. Think of these as your coding standards, git workflow rules, security policies, and testing requirements baked directly into Claude's behavior. Rules are organized into a `common/` layer (language-agnostic) and language-specific directories that extend it.
+Claude always follows these guidelines in every conversation. Think of these as your coding standards, git workflow rules, security policies, and testing requirements baked directly into Claude's behavior. Rules are organized into a `common/` layer (language-agnostic) and language-specific directories that extend it.
 
 ```
 rules/
@@ -59,7 +59,7 @@ rules/
 │   ├── git-workflow.md
 │   ├── testing.md
 │   └── security.md
-├── typescript/
+├── typescript/      # language specific
 ├── python/
 ├── golang/
 └── swift/
