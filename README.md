@@ -21,7 +21,7 @@ The `main` branch holds the full unfiltered collection to personalize your own. 
 
 ## Setting Up Your Own
 
-If you are already familiar with `/claude`, this section is not for you. If you are not, setting up your own requires some basic understanding of the structure. Claude reads from a `.claude/` directory in your project (or globally from `~/.claude/`). Everything inside shapes how Claude behaves — what it knows, what it does automatically, and how it delegates work. Here's what each piece does:
+If you are already familiar with `.claude/`, this section is not for you. If you are not, setting up your own requires some basic understanding of the structure. Claude reads from a `.claude/` directory in your project (or globally from `~/.claude/`). Everything inside shapes how Claude behaves — what it knows, what it does automatically, and how it delegates work. Here's what each piece does:
 
 ### `agents/`
 
